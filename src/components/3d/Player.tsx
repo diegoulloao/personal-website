@@ -2,17 +2,22 @@
 import { useEffect, useRef } from "react";
 
 // Hooks
-import { usePlayerMovements } from "./hooks/usePlayerMovements";
+import { usePlayerMovements } from "./hooks";
 
 // Three.js
 import { useThree, useFrame } from "@react-three/fiber";
 import { useSphere } from "@react-three/cannon";
 import { Vector3 } from "three";
 
+// Interfaces
+interface PlayerProps {
+  yStartPoint?: number;
+}
+
 // Constants
 const PLAYER_WALK_SPEED = 7;
 
-const Player: React.FC = () => {
+const Player: React.FC<PlayerProps> = ({ yStartPoint = 3 }) => {
   // Values
   const positionRef = useRef([0, 0, 0]);
   const velocityRef = useRef([0, 0, 0]);
@@ -27,7 +32,7 @@ const Player: React.FC = () => {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: "Dynamic",
-    position: [0, 5, 0],
+    position: [0, yStartPoint, 0],
   }));
 
   // link camera with player position

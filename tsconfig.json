@@ -7,7 +7,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@3d/*": ["src/3d/*"]
+      "@3d/*": ["src/3d/*"],
+      "@images/*": ["src/images/*"]
     }
   }
 }

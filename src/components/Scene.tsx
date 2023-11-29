@@ -4,9 +4,7 @@ import { Sky } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
 // 3D
-import { Ground } from "@components/3d/Ground";
-import { FirstPerson } from "@components/3d/FirstPerson";
-import { Player } from "@components/3d/Player";
+import { Ground, FirstPerson, Player } from "@components/3d";
 
 const Scene: React.FC = () => {
   return (
@@ -22,13 +20,13 @@ const Scene: React.FC = () => {
         turbidity={20}
       />
 
-      <ambientLight intensity={0.6} />
+      <ambientLight intensity={0.7} />
 
       <FirstPerson />
 
       <Physics>
-        <Player />
-        <Ground />
+        <Player yStartPoint={3} />
+        <Ground size={[30, 30]} />
       </Physics>
     </Canvas>
   );

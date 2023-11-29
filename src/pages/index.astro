@@ -1,10 +1,13 @@
 ---
+// Layout
 import Layout from "@layouts/Layout.astro";
-import Scene from "@components/Scene.svelte"
+
+// Scenes
+import Scene from "@components/Scene.tsx"
 ---
 
-<Layout title="A Three.js test">
-  <Scene client:only="svelte" />
+<Layout title="A Three.js App">
+  <Scene client:only="react" />
 </Layout>
 
 <style></style>
